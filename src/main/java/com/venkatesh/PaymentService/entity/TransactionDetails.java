@@ -22,7 +22,7 @@ public class TransactionDetails {
     @Column(name = "PAYMENT_MODE")
     private String paymentMode;
     @Column(name = "REFERENCE_NUMBER")
-    private String referenceNumber;
+    private long referenceNumber;
     @Column(name = "PAYMENT_DATE")
     private Instant paymentDate;
     @Column(name = "PAYMENT_STATUS")
