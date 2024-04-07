@@ -1,5 +1,6 @@
 package com.venkatesh.PaymentService.entity;
 
+import com.venkatesh.PaymentService.model.PaymentMode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
