@@ -1,6 +1,7 @@
 package com.venkatesh.PaymentService.service;
 
 import com.venkatesh.PaymentService.entity.TransactionDetails;
+import com.venkatesh.PaymentService.exception.PaymentServiceCustomException;
 import com.venkatesh.PaymentService.model.PaymentRequest;
 import com.venkatesh.PaymentService.model.PaymentResponse;
 import com.venkatesh.PaymentService.repository.TransactionDetailsRepository;
@@ -43,7 +44,7 @@ public class PaymentServiceImpl implements PaymentService{
     @Override
     public PaymentResponse getPaymentDetails(long id){
         TransactionDetails transactionDetails=transactionDetailsRepository.findById(id)
-                .orElseThrow(()->new RuntimeException("Not found transaction with id"));
+                .orElseThrow(()->new PaymentServiceCustomException("Not found transaction with id"));
         PaymentResponse paymentResponse=new PaymentResponse();
         BeanUtils.copyProperties(transactionDetails,paymentResponse);
         return paymentResponse;
