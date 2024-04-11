@@ -44,7 +44,7 @@ public class PaymentServiceImpl implements PaymentService{
     @Override
     public PaymentResponse getPaymentDetails(long id){
         TransactionDetails transactionDetails=transactionDetailsRepository.findById(id)
-                .orElseThrow(()->new PaymentServiceCustomException("Not found transaction with id"));
+                .orElseThrow(()->new PaymentServiceCustomException("Transaction not found with Id: "+id,"PAYMENT_NOT_FOUND"));
         PaymentResponse paymentResponse=new PaymentResponse();
         BeanUtils.copyProperties(transactionDetails,paymentResponse);
         return paymentResponse;
