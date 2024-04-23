@@ -1,4 +1,4 @@
 
 spring:
   profiles:
-    acitve: dev
+    active: dev
